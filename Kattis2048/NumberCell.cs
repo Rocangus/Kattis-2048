@@ -19,6 +19,11 @@ namespace Kattis2048
             merger.Value += mergee.Value;
             merger.Merged = true;
             return merger;
-        } 
+        }
+
+        public override string ToString()
+        {
+            return Value.ToString();
+        }
     }
 }
