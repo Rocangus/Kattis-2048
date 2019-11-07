@@ -15,6 +15,7 @@ namespace Kattis2048
             }
             var moveDirection = int.Parse(Console.ReadLine());
             var cells = PopulateCellArrays(cellLines);
+            cells = processMove(cells, moveDirection);
         }
 
         private static NumberCell[,] PopulateCellArrays(string[] cellLines)
@@ -25,9 +26,15 @@ namespace Kattis2048
                 var values = cellLines[y].Split();
                 for (int x = 0; x < columns; x++)
                 {
-                    cells[y, x] = new NumberCell(int.Parse(values[x]));
+                    var position = Tuple.Create(y, x);
+                    cells[y, x] = new NumberCell(int.Parse(values[x]), position);
                 }
             }
+            return cells;
+        }
+
+        private static NumberCell[,] processMove(NumberCell[,] cells, int moveDirection)
+        {
             return cells;
         }
     }
