@@ -20,6 +20,7 @@ namespace Kattis2048
         {
             merger.Value += mergee.Value;
             merger.Merged = true;
+            merger.Position = mergee.Position;
             return merger;
         }
 

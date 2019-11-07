@@ -28,7 +28,7 @@ namespace Kattis2048
                 {
                     var position = Tuple.Create(y, x);
                     cells[y, x] = new NumberCell(int.Parse(values[x]), position);
-                }
+                } //TODO: Make move methods that make use of y and x and backtrack until the bounds of the multidimensional NumberCell array to move cells after any merging.
             }
             return cells;
         }
